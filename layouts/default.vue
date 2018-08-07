@@ -1,8 +1,18 @@
 <template>
   <div>
+    <ToolBar/>
     <nuxt/>
   </div>
 </template>
+
+<script>
+import ToolBar from '~/components/ToolBar'
+export default {
+  components: {
+    ToolBar
+  }
+}
+</script>
 
 <style>
 html {
@@ -50,4 +60,3 @@ html {
   background-color: #35495e;
 }
 </style>
-
