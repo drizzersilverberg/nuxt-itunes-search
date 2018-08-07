@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 module.exports = {
   /*
   ** Headers of the page
@@ -10,9 +12,18 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Nuxt.js project' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'}
     ]
   },
+
+  /*
+  ** Plugins
+  */
+  plugins: [
+    // '~plugins/vuetify.js'
+  ],
+
   /*
   ** Customize the progress bar color
   */
@@ -34,6 +45,20 @@ module.exports = {
         })
       }
     }
+  },
+
+  modules: [
+    '@nuxtjs/dotenv',
+    '@nuxtjs/axios',
+    '@nuxtjs/vuetify',
+  ],
+
+  axios: {
+    baseURL: process.env.BASE_API_URL || 'localhost:3000/api',
+    credentials: false
+  },
+
+  vuetify: {
+    //
   }
 }
-
